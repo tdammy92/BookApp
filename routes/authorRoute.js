@@ -48,18 +48,25 @@ router.post('/newAuthor', (req, res) => {
 
 
     if (req.isAuthenticated()) {
-        const newAuthor = new author({
-            name: req.body.author
-        });
 
-        newAuthor.save((err) => {
-            if (err) {
-                res.redirect('/error')
-            } else {
-                res.redirect('/authors')
+        if (req.body === '' || req.body == null) {
+            res.redirect('/error')
+        } else {
+            const newAuthor = new author({
+                name: req.body.author
+            });
 
-            }
-        })
+            newAuthor.save((err) => {
+                if (err) {
+                    res.redirect('/error')
+                } else {
+                    res.redirect('/authors')
+
+                }
+            })
+
+
+        }
 
     } else {
 

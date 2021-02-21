@@ -67,7 +67,9 @@ server.get('/galary', (req, res) => {
 });
 
 server.get('/error', (req, res) => {
-    res.render('error', { error: req.err })
+
+
+    res.render('error', {})
 
 });
 

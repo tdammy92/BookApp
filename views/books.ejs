@@ -3,4 +3,21 @@
         books section
     </h2>
 
+    <div class="form-search-author">
+        <form action="/books" method="GET">
+            <div class="input-item">
+
+                <input type="text" name="book" id="author" placeholder="Search book">
+            </div>
+            <button type="submit" id="log">Search</button>
+        </form>
+    </div>
+
+
+
+
+
+
+    <a href="/books/newBook" id="create">Create new book</a>
+
     <%- include('partials/footer'); -%>

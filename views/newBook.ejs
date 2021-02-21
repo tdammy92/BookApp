@@ -1,0 +1,43 @@
+<%- include('partials/header'); -%>
+    <div class="form-author-div">
+        <form action="/books/newBook" method="post" class="formItems">
+
+            <div class="input-form-item">
+                <label for="">Title</label>
+                <input type="text" name="title" id="author">
+            </div>
+
+            <div class="input-form-item">
+                <label for="">Author</label>
+                <select name="author" id="" value="<%= author._id %>">
+                    <% author.forEach((author)=>{ %>
+                        <option><%= author.name%></option>
+                      <% }) %> 
+                </select>
+            </div>
+
+            <div class="input-form-item">
+                <label for="">Page Count</label>
+                <input type="number" min="1" name="pageCount">
+            </div>
+
+            <div class="input-form-item">
+                <label for="">Published Date</label>
+                <input type="date" name="date">
+            </div>
+
+            <div class="input-form-item">
+                <label for="">Cover page</label>
+                <input type="file" name="coverPage">
+            </div>
+
+            <div class="input-form-item">
+                <label for="">Description</label>
+                <textarea name="description"></textarea>
+            </div>
+
+
+            <button type="submit" id="log">create</button>
+        </form>
+    </div>
+    <%- include('partials/footer'); -%>
