@@ -1,0 +1,11 @@
+<%- include('partials/header'); -%>
+    <div class="form-author-div">
+        <form action="/authors/newAuthor" method="post">
+            <div class="input-item">
+                <label for="author">Author's Name</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <button type="submit" id="log">create</button>
+        </form>
+    </div>
+    <%- include('partials/footer'); -%>

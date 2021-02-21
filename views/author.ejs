@@ -1,0 +1,32 @@
+<%- include('partials/header'); -%>
+    <h3 class="title2">
+        author section
+    </h3>
+
+    <div class="form-search-author">
+        <form action="/authors" method="GET">
+            <div class="input-item">
+
+                <input type="text" name="author" id="author" placeholder="Search Author">
+            </div>
+            <button type="submit" id="log">Search</button>
+        </form>
+    </div>
+
+    <div class="autor-scrollable">
+        <div class="autor-div">
+            <% author.forEach((author)=>{ %>
+
+                <div class="author-list">
+                    <i class="fa fa-user emoji"></i>
+                    <%=author.name%>
+                </div>
+                <% }) %>
+        </div>
+
+    </div>
+
+
+    <a href="/authors/newAuthor" id="create">Create new author</a>
+
+    <%- include('partials/footer'); -%>
