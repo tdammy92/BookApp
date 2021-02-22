@@ -59,7 +59,7 @@ router.post('/newBook', (req, res) => {
         } else {
             const newBook = new books({
                 title: req.body.title,
-                author: req.body.title,
+                author: req.body.author,
                 pageCount: req.body.pageCount,
                 datePublished: req.body.date,
                 description: req.body.description,

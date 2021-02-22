@@ -270,6 +270,8 @@ sans-serif; */
     .formItems {
         display: flex;
         flex-direction: column;
+        /* align-items: center;
+        justify-content: center; */
     }
     
     .input-form-item {
@@ -282,4 +284,45 @@ sans-serif; */
         width: 100%;
         display: block;
         color: var(--primary-color);
+    }
+    
+    .input-form-item>input {
+        border: 2px solid var(--primary-color);
+        width: 210px;
+        height: 25px;
+        border-radius: 10px;
+        color: var(--primary-color);
+        outline: 0;
+        text-align: center;
+    }
+    
+    .input-form-item>select {
+        border: 2px solid var(--primary-color);
+        width: 210px;
+        height: 25px;
+        border-radius: 10px;
+        color: var(--primary-color);
+        outline: 0;
+        text-align: center;
+        padding-left: 10px;
+    }
+    
+    .input-form-item>input[type=file] {
+        border: 2px solid var(--primary-color);
+        width: 80px;
+        height: 110px;
+        border-radius: 10px;
+        outline: 0;
+        padding-left: 10px;
+    }
+    
+    .input-form-item>textarea {
+        border: 2px solid var(--primary-color);
+        width: 210px;
+        height: 50px;
+        border-radius: 10px;
+        color: var(--primary-color);
+        outline: 0;
+        text-align: center;
+        padding-left: 10px;
     }

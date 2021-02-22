@@ -9,9 +9,9 @@
 
             <div class="input-form-item">
                 <label for="">Author</label>
-                <select name="author" id="" value="<%= author._id %>">
+                <select name="author" id="" ">
                     <% author.forEach((author)=>{ %>
-                        <option><%= author.name%></option>
+                        <option value="<%=author._id %>""><%= author.name%></option>
                       <% }) %> 
                 </select>
             </div>
@@ -33,7 +33,7 @@
 
             <div class="input-form-item">
                 <label for="">Description</label>
-                <textarea name="description"></textarea>
+                <textarea name="description" placeholder="about the book"></textarea>
             </div>
 
 
