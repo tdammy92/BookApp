@@ -1,43 +1,45 @@
 <%- include('partials/header'); -%>
     <div class="form-author-div">
-        <form action="/books/newBook" method="post" class="formItems">
+        <div class="scrollable">
+            <form action="/books/newBook" method="post" class="formItems">
 
-            <div class="input-form-item">
-                <label for="">Title</label>
-                <input type="text" name="title" id="author">
-            </div>
+                <div class="input-form-item">
+                    <label for="">Title</label>
+                    <input type="text" name="title" id="author">
+                </div>
 
-            <div class="input-form-item">
-                <label for="">Author</label>
-                <select name="author" id="" ">
+                <div class="input-form-item">
+                    <label for="">Author</label>
+                    <select name="author" id="">
                     <% author.forEach((author)=>{ %>
-                        <option value="<%=author._id %>""><%= author.name%></option>
+                        <option value="<%=author._id %>"><%= author.name%></option>
                       <% }) %> 
                 </select>
-            </div>
+                </div>
 
-            <div class="input-form-item">
-                <label for="">Page Count</label>
-                <input type="number" min="1" name="pageCount">
-            </div>
+                <div class="input-form-item">
+                    <label for="">Number of pages</label>
+                    <input type="number" min="1" name="pageCount">
+                </div>
 
-            <div class="input-form-item">
-                <label for="">Published Date</label>
-                <input type="date" name="date">
-            </div>
+                <div class="input-form-item">
+                    <label for="">Published Date</label>
+                    <input type="date" name="date">
+                </div>
 
-            <div class="input-form-item">
-                <label for="">Cover page</label>
-                <input type="file" name="coverPage">
-            </div>
+                <div class="input-form-item">
+                    <label for="">Cover page</label>
+                    <input type="file" name="img">
+                </div>
 
-            <div class="input-form-item">
-                <label for="">Description</label>
-                <textarea name="description" placeholder="about the book"></textarea>
-            </div>
+                <div class="input-form-item">
+                    <label for="">Description</label>
+                    <textarea name="description" placeholder="write about the book!!!"></textarea>
+                </div>
 
 
-            <button type="submit" id="log">create</button>
-        </form>
+                <button type="submit" id="log">create</button>
+            </form>
+        </div>
     </div>
     <%- include('partials/footer'); -%>

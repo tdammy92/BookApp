@@ -14,10 +14,44 @@
     </div>
 
 
+    <% if(book){%>
+        <div class="autor-scrollable">
+            <div class="autor-div">
+
+                <%book.forEach((book)=>{ %>
+                    <div class="book-list-div">
+                        <img src="<%= book.imgSrc %>" alt="<%=book.title%> ">
+                        <div class="word-div">
+                            <p>
+                                <%=book.title%>
+                            </p>
+                            <p>
+                                by:
+                                <%author.forEach((author)=>{%>
+                                    <%if(book.author == author.id){%>
+
+                                        <p>
+                                            <%= author.name %>
+                                        </p>
+                                        <% }%>
 
 
+                                            <% })%>
+                            </p>
+                            <p>
+                                <%=book.pageCount%> Pages
+                            </p>
+
+                        </div>
+                    </div>
+                    <% })%>
+
+            </div>
+        </div>
+
+        <%}%>
 
 
-    <a href="/books/newBook" id="create">Create new book</a>
+            <a href="/books/newBook" id="create">Create new book</a>
 
-    <%- include('partials/footer'); -%>
+            <%- include('partials/footer'); -%>

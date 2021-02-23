@@ -3,8 +3,16 @@ FilePond.registerPlugin(
     FilePondPluginImageCrop,
     FilePondPluginImagePreview,
     FilePondPluginImageResize,
-    FilePondPluginImageTransform
+    FilePondPluginImageTransform,
+    FilePondPluginFileEncode
 );
+
+FilePond.setOptions({
+    stylePanelAspectRatio: 110 / 80,
+    imageResizeTargetHeight: 110,
+    imageResizeTargetWidth: 80,
+
+});
 
 
 
@@ -22,12 +30,6 @@ const pond = FilePond.create(inputElement, {
         console.log(err, fileItem.getMetadata('resize'));
     },
 
-    onpreparefile: (fileItem, output) => {
-        // const img = new Image();
-        // img.src = URL.createObjectURL(output);
-        // document.body.appendChild(img);
 
-        console.log(output)
-    }
 
 });
