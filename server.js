@@ -7,8 +7,8 @@ const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
-// const book = require('./models/books.js');
-// const author = require('./models/author.js');
+const book = require('./models/books.js');
+const author = require('./models/author.js');
 const bookRoute = require('./routes/bookRoute.js');
 const authorRoute = require('./routes/authorRoute.js');
 const User = require('./models/user.js');
@@ -55,10 +55,17 @@ mongoose.set('useCreateIndex', true);
 
 
 // ............galary route code......................
-server.get('/galary', (req, res) => {
+server.get('/galary', async(req, res) => {
 
     if (req.isAuthenticated()) {
-        res.render('galary', {});
+
+
+        try {
+            const books = await book.find({});
+            res.render('galary', { book: books });
+        } catch (error) {
+
+        }
 
     } else {
 

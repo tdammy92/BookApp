@@ -20,16 +20,16 @@
 
                 <%book.forEach((book)=>{ %>
                     <div class="book-list-div">
-                        <img src="<%= book.imgSrc %>" alt="<%=book.title%> ">
+                        <div class="img-div">
+                            <img src="<%= book.imgSrc %>" alt="<%=book.title%> ">
+                        </div>
                         <div class="word-div">
                             <p>
                                 <%=book.title%>
                             </p>
-                            <p>
-                                by:
+                            <p> by:
                                 <%author.forEach((author)=>{%>
                                     <%if(book.author == author.id){%>
-
                                         <p>
                                             <%= author.name %>
                                         </p>
@@ -40,6 +40,9 @@
                             </p>
                             <p>
                                 <%=book.pageCount%> Pages
+                            </p>
+                            <p>
+                                <%= book.datePublished.toLocaleDateString()%>
                             </p>
 
                         </div>

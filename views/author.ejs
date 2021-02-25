@@ -17,8 +17,12 @@
         <div class="autor-div">
             <% author.forEach((author)=>{ %>
                 <div class="author-list">
-                    <i class="fa fa-user emoji"></i>
-                    <%=author.name%>
+                    <div class="emoji"><i class="fa fa-user emoji"></i></div>
+
+                    <div class="author-name">
+                        <%=author.name%>
+                    </div>
+
                 </div>
                 <% }) %>
         </div>

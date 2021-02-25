@@ -242,23 +242,28 @@ sans-serif; */
     
     .author-list {
         box-sizing: border-box;
-        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+        /* box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3); */
         display: flex;
         width: 300px;
-        height: 40px;
+        height: 80px;
         margin-bottom: 10px;
         margin-top: 5px;
         background-color: white;
         border-radius: 10px;
-        justify-content: space-evenly;
-        align-items: center;
-        font-size: 1.5rem;
         color: var(--primary-color);
     }
     
     .author-list>.emoji {
-        /* color: var(--primary-color); */
-        font-size: 2rem;
+        font-size: 3rem;
+        text-align: center;
+        flex: 1 1 30%;
+    }
+    
+    .author-list>.author-name {
+        flex: 1 1 70%;
+        text-align: center;
+        align-self: center;
+        border-left: 2px solid var(--primary-color);
     }
     
     .title2 {
@@ -333,7 +338,7 @@ sans-serif; */
     
     .scrollable {
         padding: 8px 2px;
-        max-height: 450px;
+        max-height: 445px;
         overflow: hidden;
         overflow-y: scroll;
     }
@@ -346,20 +351,45 @@ sans-serif; */
      ::-webkit-scrollbar-thumb {
         background: #FF0000;
     }
+    /* book list display codes */
     
     .book-list-div {
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         height: 120px;
         justify-content: space-around;
     }
     
-    .book-list-div>img {
+    .book-list-div>.img-div {
+        height: 120px;
+        flex: 1 1 30%;
+    }
+    
+    .book-list-div>.img-div>img {
         width: 80px;
         height: 120px;
     }
     
     .book-list-div>.word-div {
         color: var(--primary-color);
-        margin-left: 2px;
+        flex: 1 1 70%;
+        margin-left: 4px;
+    }
+    
+    .book-list-div>.word-div>p {
+        font-size: 14px;
+    }
+    /* codes dor galary display....  */
+    
+    .bookShow {
+        display: flex;
+        width: 300px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .bookShow>.bookItem {
+        flex: 0 0 40%;
+        margin: 5px;
+        height: auto;
     }

@@ -23,19 +23,6 @@ router.get('/', async(req, res) => {
             res.redirect('/error')
         }
 
-
-        // books.find(searchedBook, (err, book) => {
-        //     if (err) {
-        //         res.redirect('/error')
-        //     } else {
-        //         const autho = await author.findById(book.author);
-        //         res.render('books', {
-        //             book: book,
-        //             author: autho
-        //         });
-
-        //     }
-        // });
     } else {
         res.redirect('/')
     }
@@ -63,9 +50,12 @@ router.get('/newBook', async(req, res) => {
 
 
 
+
+
+
+
+
 router.post('/newBook', (req, res) => {
-
-
     if (req.isAuthenticated()) {
 
         if (req.body === '' || req.body == null) {
@@ -83,6 +73,8 @@ router.post('/newBook', (req, res) => {
 
             bookImage(newBook, req.body.img);
 
+            // console.log(new Date(req.body.date).toLocaleDateString());
+
             newBook.save((err) => {
                 if (err) {
                     console.log(err)
@@ -97,8 +89,32 @@ router.post('/newBook', (req, res) => {
         res.redirect('/')
     }
 
+});
 
 
+
+
+
+router.get('/:bookId', async(req, res) => {
+
+    if (req.isAuthenticated()) {
+        try {
+            const { bookId } = await req.params;
+            const Onebook = await books.findById(bookId).exec();
+            const autho = await author.find();
+
+            res.render('singlebook', { book: Onebook, author: autho })
+
+        } catch (error) {
+            console.log(error)
+            res.redirect('/error');
+        }
+
+
+    } else {
+
+        res.redirect('/')
+    }
 
 });
 

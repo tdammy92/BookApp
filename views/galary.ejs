@@ -3,4 +3,19 @@
         Welcome to galary
     </h3>
 
-    <%- include('partials/footer'); -%>
+
+
+    <% if(book){%>
+        <div class="author-scrollable">
+            <div class="bookShow">
+                <%   book.forEach((book)=>{ %>
+                    <a href="books/<%= book._id %> " class="bookItem">
+                        <img src="<%= book.imgSrc %> " alt="<%= book.title %> ">
+                    </a>
+                    <%  })%>
+            </div>
+        </div>
+        <%} %>
+
+
+            <%- include('partials/footer'); -%>
