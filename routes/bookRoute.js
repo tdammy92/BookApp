@@ -95,28 +95,28 @@ router.post('/newBook', (req, res) => {
 
 
 
-router.get('/:bookId', async(req, res) => {
+// router.get('/:bookId', async(req, res) => {
 
-    if (req.isAuthenticated()) {
-        try {
-            const { bookId } = await req.params;
-            const Onebook = await books.findById(bookId).exec();
-            const autho = await author.find();
+//     if (req.isAuthenticated()) {
+//         try {
+//             const { bookId } = await req.params;
+//             const Onebook = await books.findById(bookId).exec();
+//             const autho = await author.find();
 
-            res.render('singlebook', { book: Onebook, author: autho })
+//             res.render('singlebook', { book: Onebook, author: autho })
 
-        } catch (error) {
-            console.log(error)
-            res.redirect('/error');
-        }
+//         } catch (error) {
+//             console.log(error)
+//             res.redirect('/error');
+//         }
 
 
-    } else {
+//     } else {
 
-        res.redirect('/')
-    }
+//         res.redirect('/')
+//     }
 
-});
+// });
 
 
 function bookImage(image, imgEncoded) {

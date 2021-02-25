@@ -153,7 +153,7 @@ server.get('/:bookId', async(req, res) => {
             const Onebook = await book.findById(bookId).exec();
             const autho = await author.find();
 
-            res.render('singlebook', { book: Onebook, author: autho })
+            res.render('singleBook', { book: Onebook, author: autho })
 
         } catch (error) {
             console.log(error)
