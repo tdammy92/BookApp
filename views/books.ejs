@@ -4,12 +4,20 @@
     </h2>
 
     <div class="form-search-author">
-        <form action="/books" method="GET">
-            <div class="input-item">
-
+        <form action="/books" method="GET" id="search-form">
+            <div class="search-item">
+                <label for="">Title:</label>
                 <input type="text" name="book" id="author" placeholder="Search book">
             </div>
-            <button type="submit" id="log">Search</button>
+            <div class="search-item">
+                <label for="">Published Before:</label>
+                <input type="date" name="publishedAfter" id="author" placeholder="Search book">
+            </div>
+            <div class="search-item">
+                <label for="">Published After:</label>
+                <input type="date" name="publishedBefore" id="author" placeholder="Search book">
+            </div>
+            <button type="submit" id="searchBtn">Search</button>
         </form>
     </div>
 

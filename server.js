@@ -160,7 +160,6 @@ server.get('/:bookId', async(req, res) => {
             res.redirect('/error');
         }
 
-
     } else {
 
         res.redirect('/')

@@ -13,6 +13,10 @@ router.get('/', async(req, res) => {
         if (req.query.book != null && req.query.book != '') {
             searchedBook.title = new RegExp(req.query.book, 'i')
         }
+        if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
+
+        }
+
         try {
             const book = await books.find(searchedBook);
             const autho = await author.find();
@@ -34,7 +38,6 @@ router.get('/newBook', async(req, res) => {
     if (req.isAuthenticated()) {
 
         const autho = await author.find({});
-
         res.render('newBook', {
             author: autho,
         });
@@ -47,11 +50,6 @@ router.get('/newBook', async(req, res) => {
 
 
 });
-
-
-
-
-
 
 
 
@@ -73,8 +71,6 @@ router.post('/newBook', (req, res) => {
 
             bookImage(newBook, req.body.img);
 
-            // console.log(new Date(req.body.date).toLocaleDateString());
-
             newBook.save((err) => {
                 if (err) {
                     console.log(err)
@@ -92,31 +88,6 @@ router.post('/newBook', (req, res) => {
 });
 
 
-
-
-
-// router.get('/:bookId', async(req, res) => {
-
-//     if (req.isAuthenticated()) {
-//         try {
-//             const { bookId } = await req.params;
-//             const Onebook = await books.findById(bookId).exec();
-//             const autho = await author.find();
-
-//             res.render('singlebook', { book: Onebook, author: autho })
-
-//         } catch (error) {
-//             console.log(error)
-//             res.redirect('/error');
-//         }
-
-
-//     } else {
-
-//         res.redirect('/')
-//     }
-
-// });
 
 
 function bookImage(image, imgEncoded) {
