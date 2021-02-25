@@ -140,6 +140,34 @@ server.post('/login', passport.authenticate('local', {
     failureRedirect: '/'
 }));
 
+
+
+
+
+
+server.get('/:bookId', async(req, res) => {
+
+    if (req.isAuthenticated()) {
+        try {
+            const { bookId } = await req.params;
+            const Onebook = await book.findById(bookId).exec();
+            const autho = await author.find();
+
+            res.render('singlebook', { book: Onebook, author: autho })
+
+        } catch (error) {
+            console.log(error)
+            res.redirect('/error');
+        }
+
+
+    } else {
+
+        res.redirect('/')
+    }
+
+});
+
 //main logic ends here....
 
 

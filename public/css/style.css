@@ -391,5 +391,36 @@ sans-serif; */
     .bookShow>.bookItem {
         flex: 0 0 40%;
         margin: 5px;
-        height: auto;
+        height: 160px;
+    }
+    
+    .bookShow>.bookItem>img {
+        height: 150px;
+        width: 100px;
+    }
+    /* code for single book display */
+    
+    .book-fixed {
+        margin-top: 20px;
+        width: auto;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center; */
+    }
+    
+    .book-fixed>img {
+        height: 220px;
+        width: 150px;
+        margin-bottom: 5px;
+    }
+    
+    .book-fixed>.d-item {
+        border-left: 2px solid var(--primary-color);
+        margin-bottom: 5px;
+        padding-left: 4px;
+    }
+    
+    .book-fixed>.d-item>label {
+        color: var(--primary-color);
     }

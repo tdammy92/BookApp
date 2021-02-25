@@ -1,43 +1,44 @@
 <%- include('partials/header'); -%>
+    <div class="book-fixed">
+        <%if(book){ %>
 
-    <%if(book){ %>
+            <img src="<%= book.imgSrc %> " alt="<%= book.title %>">
 
-        <img src="<%= book.imgSrc %> " alt="<%= book.title %>">
+            <div class="d-item">
+                <Label>Title</Label>
+                <P>
+                    <%= book.title %>
+                </P>
+            </div>
+            <div class="d-item">
+                <Label>Author</Label>
+                <P>
+                    <%author.forEach((author)=>{%>
 
-        <div class="d-item">
-            <Label>Title</Label>
-            <P>
-                <%= book.title %>
-            </P>
-        </div>
-        <div class="d-item">
-            <Label>Author</Label>
-            <P>
-                <%author.forEach((author)=>{%>
+                        <% if(author.id == book.author){%>
+                            <%= author.name %>
+                                <% } %>
+                                    <%})%>
+                </P>
+            </div>
+            <div class="d-item">
+                <Label>No of Pages</Label>
+                <P>
+                    <%= book.pageCount %>
+                </P>
+            </div>
+            <div class="d-item">
 
-                    <% if(author.id == book.author){%>
-                        <%= author.name %>
-                            <% } %>
-                                <%})%>
-            </P>
-        </div>
-        <div class="d-item">
-            <Label>No of Pages</Label>
-            <P>
-                <%= book.pageCount %>
-            </P>
-        </div>
-        <div class="d-item">
+                <Label>Date Published</Label>
+                <P>
+                    <%= book.datePublished.toLocaleDateString() %>
+                </P>
+            </div>
 
-            <Label>Date Published</Label>
-            <P>
-                <%= book.datePublished.toLocaleDateString() %>
-            </P>
-        </div>
-
-        <%}%>
-
+            <%}%>
+    </div>
 
 
 
-            <%- include('partials/footer'); -%>
+
+    <%- include('partials/footer'); -%>
