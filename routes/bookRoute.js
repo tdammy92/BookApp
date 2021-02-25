@@ -9,16 +9,21 @@ const imageMimeTypes = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif'];
 router.get('/', async(req, res) => {
 
     if (req.isAuthenticated()) {
-        let searchedBook = {};
-        if (req.query.book != null && req.query.book != '') {
-            searchedBook.title = new RegExp(req.query.book, 'i')
-        }
-        if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
 
+        let query = books.find();
+        if (req.query.book != null && req.query.book != '') {
+            query = query.regex('title', new RegExp(req.query.book, 'i'));
+        };
+        if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
+            query = query.lte('datePublished', req.query.publishedBefore);
+        };
+        if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
+            query = query.lte('datePublished', req.query.publishedAfter);
         }
 
         try {
-            const book = await books.find(searchedBook);
+            // const book = await books.find(searchedBook);
+            const book = await query.exec();
             const autho = await author.find();
 
             res.render('books', { book: book, author: autho })
@@ -86,6 +91,36 @@ router.post('/newBook', (req, res) => {
     }
 
 });
+
+
+
+router.post('/delete', async(req, res) => {
+
+    const deleteId = await req.body.bookId;
+
+    console.log(deleteId);
+
+    // books.findOneAndRemove({ _id: deleteId }, (err) => {
+    //     if (!err) {
+    //         console.log('item has been removed');
+    //         // res.redirect('/galary')
+    //     } else {
+    //         console.log('an error occured', err);
+    //     }
+    // });
+
+    // books.findByIdAndRemove(deleteId, (error, success) => {
+    //     if (!error) {
+    //         // res.redirect('/galary');
+    //         console.log('Deleted successfully')
+
+    //     } else {
+    //         // res.redirect('/error');
+    //         console.log(error);
+    //     }
+
+    // })
+})
 
 
 

@@ -27,7 +27,8 @@
             <div class="autor-div">
 
                 <%book.forEach((book)=>{ %>
-                    <div class="book-list-div">
+                    <a href="/<%= book.id %> " class="book-list-div">
+                        <!-- <div class="book-list-div"> -->
                         <div class="img-div">
                             <img src="<%= book.imgSrc %>" alt="<%=book.title%> ">
                         </div>
@@ -54,7 +55,8 @@
                             </p>
 
                         </div>
-                    </div>
+                        <!-- </div> -->
+                    </a>
                     <% })%>
 
             </div>

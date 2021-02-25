@@ -42,6 +42,16 @@
                 </P>
             </div>
 
+            <div class="action-button">
+                <a href="/book/edit" class="edit">Edit</a>
+
+
+                <form action="books/delete" method="POST">
+                    <input type="hidden" name="bookId" value="<%= book._id %> ">
+                    <button type="submit" class="del">Delete</button>
+                </form>
+            </div>
+
             <%}%>
     </div>
 

@@ -399,6 +399,7 @@ sans-serif; */
         margin-bottom: 15px;
         height: 120px;
         justify-content: space-around;
+        text-decoration: none;
     }
     
     .book-list-div>.img-div {
@@ -443,25 +444,74 @@ sans-serif; */
     
     .book-fixed {
         margin-top: 20px;
-        width: auto;
-        /* display: flex;
+        width: 300px;
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: center; */
+        align-content: center;
+        text-align: center;
     }
     
     .book-fixed>img {
+        align-self: center;
         height: 220px;
         width: 150px;
         margin-bottom: 5px;
     }
     
     .book-fixed>.d-item {
-        border-left: 2px solid var(--primary-color);
+        border-bottom: 1px solid var(--primary-color);
         margin-bottom: 5px;
         padding-left: 4px;
     }
     
     .book-fixed>.d-item>label {
         color: var(--primary-color);
+    }
+    
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .edit {
+        text-align: center;
+        height: 30px;
+        /* font-size: 12px; */
+        text-decoration: none;
+        color: var(--secondary-color);
+        border: 1px solid var(--primary-color);
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        width: 60px;
+        outline: 0;
+    }
+    
+    .edit:hover {
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        width: 60px;
+        outline: 0;
+    }
+    
+    .del {
+        text-align: center;
+        height: 30px;
+        text-decoration: none;
+        color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        background-color: #ff5e78;
+        border-radius: 10px;
+        width: 60px;
+        outline: 0;
+    }
+    
+    .del:hover {
+        color: #ff5e78;
+        border: 1px solid #ff5e78;
+        background-color: var(--secondary-color);
+        cursor: pointer;
     }
